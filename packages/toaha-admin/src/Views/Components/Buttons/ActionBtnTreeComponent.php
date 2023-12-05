@@ -1,0 +1,44 @@
+<?php
+
+namespace Toaha\Admin\AdminLTE\Views\Components\Buttons;
+
+use Illuminate\View\Component;
+
+class ActionBtnTreeComponent extends Component
+{
+    public $href
+            ,$id
+           ,$class
+           ,$color
+           ,$text_color
+           ,$tooltip
+           ,$title
+           ,$icon;
+
+    public function __construct
+    (
+        $class       = false
+        ,$id         = false
+        ,$href       = '#'
+        ,$color      = 'primary'
+        ,$text_color = 'light'
+        ,$tooltip    = 'Tree'
+        ,$title      = false
+        ,$icon       = 'tree'
+    )
+    {
+        $this->href         = $href;
+        $this->id           = $id;
+        $this->class        = $class;
+        $this->color        = $color;
+        $this->text_color   = $text_color;
+        $this->tooltip      = $tooltip;
+        $this->title        = $title;
+        $this->icon         = $icon;
+    }
+    
+    public function render()
+    {
+        return view('toaha-admin::buttons.action-btn-tree');
+    }
+}
