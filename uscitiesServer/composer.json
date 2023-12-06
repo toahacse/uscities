@@ -10,8 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "toaha/adminlte": "dev-main",
-        "toaha/uscitiesadmin": "dev-main"
+        "toaha/adminlte": "dev-master",
+        "toaha/uscitiesadmin": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -67,12 +67,12 @@
     "prefer-stable": true,
     "repositories": {
         "toaha-admin":{
-            "type": "path",
-            "url": "../packages/toaha-admin"
+            "type": "vcs",
+            "url": "https://github.com/toahacse/toaha-admin.git"
         },
         "uscitiesadmin":{
-            "type": "path",
-            "url": "../packages/uscitiesadmin"
+            "type": "vcs",
+            "url": "https://github.com/toahacse/uscitiesadmin.git"
         }
     }
 }
