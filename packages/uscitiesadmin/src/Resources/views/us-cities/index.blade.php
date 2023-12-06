@@ -66,7 +66,7 @@
     </div>
 
     <div id="show-city-modal" class="modal" data-backdrop="static" data-keyboard="false" tabindex="-1">
-        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header bg-dark">
                 <h5 class="modal-title">City Details</h5>

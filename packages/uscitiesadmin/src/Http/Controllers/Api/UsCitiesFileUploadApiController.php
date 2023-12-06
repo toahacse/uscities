@@ -86,9 +86,29 @@ class UsCitiesFileUploadApiController extends Controller
         ]);
     }
 
-
     function get_city_data(Request $request) {
         return response()->json(UsCities::firstWhere('uuid', $request->input('uuid')));
+    }
+
+    function citiesApiData(Request $request) {
+        $city = $request->input('city');
+        $state = $request->input('state');
+        $county = $request->input('county');
+
+        if(is_null($city) && is_null($state) && is_null($county)){
+            return response()->json('Please select city or state or county');
+        }
+        $filteredData = UsCities::when($city, function ($query) use ($city) {
+            $query->where('city', 'LIKE', "%{$city}%");
+        })
+        ->when($state, function ($query) use ($state) {
+            $query->where('state_name', 'LIKE', "%{$state}%");
+        })
+        ->when($county, function ($query) use ($county) {
+            $query->where('county_name', 'LIKE', "%{$county}%");
+        })
+        ->get();
+        return response()->json($filteredData);
     }
 
     private function getPages($currentPage, $lastPage, $totalPages)
